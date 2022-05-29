@@ -1,0 +1,92 @@
+<!-- Arreglar error 500 OK -->
+<div class="row g-0" *ngIf="usuario">
+
+    <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 parte1">
+        <img src={{usuario.fotoPerfil}} class="img-fluid" id="fotodeperfil">
+    </div>
+    <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 parte2">
+        <p id="nombre"> {{usuario.nombre}} {{usuario.apellido}} </p>
+        <p> {{usuario.titulo}}</p>
+    </div>
+    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+        <span>
+            <h1>Acerca de mi</h1>
+            <p>{{usuario.descripcion}}
+
+            </p>
+        </span>
+    </div>
+
+    <a 
+    (click)="onOpenModal('edit', usuario)"
+    class="btn btn-primary tooltips"
+    data-placement="top"
+    data-toggle="modal"
+    data-target="#editUsuarioModal"
+    data-original-title="Edit"
+    ><i class="fa fa-pencil"></i>
+</a>
+
+<!--
+    Edit Modal
+-->
+
+<div class="modal fade" id="editUsuarioModal" tabindex="-1" role="dialog" aria-labelledby="editUsuarioModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editUsuarioModalLabel">
+                    Edit User 
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <form #editForm="ngForm">
+                    <label for="name">Nombre</label>
+                    <input type="text" ngModel="{{ editUsuario?.nombre }}" name="nombre" class="form-control"
+                        id="nombre" placeholder="Nombre">
+                    
+                    <div class="form-group">   
+                        <label for="apellido">Apellido</label>
+                    <input type="text" ngModel="{{ editUsuario?.apellido }}" name="apellido" class="form-control"
+                        id="apellido" placeholder="Apellido" />
+                    </div> 
+
+                    <div class="form-group">   
+                        <label for="titulo">Titulo</label>
+                    <input type="text" ngModel="{{ editUsuario?.titulo }}" name="titulo" class="form-control"
+                        id="titulo" placeholder="Titulo" />
+                    </div> 
+
+                    <div class="form-group">
+                        <label for="descripcion">Descripcion</label>
+                        <input type="text" ngModel="{{editUsuario?.descripcion }}" name="descripcion"
+                            class="form-control" id="descripcion" placeholder="Descripcion" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fotoPerfil">Imagen URL</label>
+                        <input type="text" ngModel="{{ editUsuario?.fotoPerfil }}" name="fotoPerfil"
+                            class="form-control" id="fotoPerfil" placeholder="Image URL" />
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" id="" data-dismiss="modal" class="btn btn-secondary">
+                            Close
+                        </button>
+
+                        <button (click)="onUpdateUsuario(editForm.value)" data-dismiss="modal"
+                            class="btn btn-primary">
+                            Save changes
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
