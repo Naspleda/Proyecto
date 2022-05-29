@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping("/proyecto")
+@RequestMapping("/api/proyecto")
 
 public class ProyectoController {
 

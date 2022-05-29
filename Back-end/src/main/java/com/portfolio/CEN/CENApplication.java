@@ -10,6 +10,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 
 @SpringBootApplication
@@ -17,6 +19,16 @@ public class CENApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(CENApplication.class, args);}
+
+    @Bean
+    public WebMvcConfigurer configure(){
+        return new WebMvcConfigurer ()  {
+
+            public void addCorsMapping(CorsRegistry reg){
+                reg.addMapping("/**").allowedOrigins("http://localhost:4200/");
+            }
+        };
+    }
         
         	@Bean
                 public CorsFilter corsFilter() {

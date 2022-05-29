@@ -77,7 +77,7 @@ export class HardskillComponent implements OnInit {
         }
       })
     }
-    public onDeleteskill(idSkill: number):void{
+    public onDeleteSkill(idSkill: number):void{
 
       this.skillService.deleteSkill(idSkill).subscribe({
         next: (response:void) =>{

@@ -1,5 +1,8 @@
 package com.portfolio.CEN.Entity;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,6 +12,8 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
+@Getter
+@Setter
 
 public class Educacion implements Serializable {
     @Id
@@ -39,46 +44,4 @@ public class Educacion implements Serializable {
         this.imagenEdu = imagenEdu;
     }
 
-    public long getIdEdu() {
-        return idEdu;
-    }
-
-    public void setIdEdu(long idEdu) {
-        this.idEdu = idEdu;
-    }
-
-    public String getTituloEdu() {
-        return tituloEdu;
-    }
-
-    public void setTituloEdu(String tituloEdu) {
-        this.tituloEdu = tituloEdu;
-    }
-
-    public int getfechaEdu() {
-        return fechaEdu;
-    }
-
-    public void setfechaEdu(int fechaEdu) {
-        this.fechaEdu = fechaEdu;
-    }
-
-    public String getDescripcionEdu() {
-        return descripcionEdu;
-    }
-
-    public void setDescripcionEdu(String descripcionEdu) {
-        this.descripcionEdu = descripcionEdu;
-    }
-
-    public String getImagenEdu() {
-        return imagenEdu;
-    }
-
-    public void setImagenEdu(String imagenEdu) {
-        this.imagenEdu = imagenEdu;
-    }
-    
-    
-    
 }
