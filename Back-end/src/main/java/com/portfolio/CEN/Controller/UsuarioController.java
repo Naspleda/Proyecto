@@ -31,9 +31,9 @@ public class UsuarioController {
         return new ResponseEntity<>(updateUsuario, HttpStatus.OK);
     }
 
-    @PutMapping("/edit/{id}")
-    public ResponseEntity editarUsuario(@PathVariable("id") Long id, @RequestBody Usuario usuarioDescripcion) {
-        return ResponseEntity.ok().body(usuarioService.putUsuario(id, usuarioDescripcion.getDescripcion()));
+   // @PutMapping("/edit/{id}")
+   // public ResponseEntity editarUsuario(@PathVariable("id") Long id, @RequestBody Usuario usuarioDescripcion) {
+   //     return ResponseEntity.ok().body(usuarioService.putUsuario(id, usuarioDescripcion.getDescripcion()));
 
-    }
 }
+

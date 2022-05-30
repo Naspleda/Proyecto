@@ -3,6 +3,7 @@
     margin-top: 20px;
     margin-bottom: 20px;
     box-shadow: 0px 0px 10px #000000
+    
 }
 
 .container{
@@ -14,9 +15,6 @@ div{
     text-align: center;
 }
 
-.container{
-    width: auto;
-}
 
 .fa{
     display: inline-block;
@@ -25,7 +23,7 @@ div{
 
 .parte1, .parte2{
     display:inline-block;
-    text-align: justify;
+    text-align: center;
 }
 /*@media (min-width: 576px){
     #fotodeperfil{

@@ -1,48 +1,48 @@
 <div class="row g-0"><h1>Experiencia</h1>
-<div  *ngFor="let experiencia of experiencias">  
-    <div class="container"> 
-      <div class="col-sm-12 col-md-7 col-lg-7 parte1">
-        <h1>{{experiencia.tituloExp}}</h1> - 
-        <h3>( {{experiencia.fechaExp}} )</h3>
-        <p>{{experiencia.descripcionExp}}</p>
-    
-        <div class="col-sm-12 col-md-3 col-lg-3 offset-md-1 offset-lg-1 parte2">    
-                <img src="{{experiencia.imagenExp}}" class="img-fluid img-experiencia">
-        
+    <div  *ngFor="let experiencia of experiencias">  
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 parte1">
+            <h4>{{experiencia.tituloExp}} - ({{experiencia.fechaExp}})</h4>
+            <br>
+            <img src="{{experiencia.imagenExp}}" style="width: 100px; margin-bottom: 20px;">
+        </div>
+
+        <div class="col-xs-12 col-sm-7 col-md-7 col-lg-7 parte3">
+            <p>{{experiencia.descripcionExp}}</p>
+        </div>
+
+    <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 parte3">
+            <a 
+            (click)="onOpenModal('edit', experiencia)"
+            class="btn btn-primary tooltips"
+            data-placement="top"
+            data-toggle="modal"
+            data-target="#editExperienceModal"
+            data-original-title="Edit"
+            ><i class="fa fa-pencil"></i>
+        </a>
+            <a
+            (click)="onOpenModal('delete', experiencia)"
+            class="btn btn-primary tooltips"
+            data-placement="top"
+            data-toggle="modal"
+            data-target="#deleteExperienceModal"
+            data-original-title="Delete"
+            ><i class="fa fa-times"></i>
+            </a>
         </div>
     </div>
-</div>
 
-    <a 
-    (click)="onOpenModal('edit', experiencia)"
-    class="btn btn-primary tooltips"
-    data-placement="top"
-    data-toggle="modal"
-    data-target="#editExperienceModal"
-    data-original-title="Edit"
-    ><i class="fa fa-pencil"></i>
-</a>
-    <a
-    (click)="onOpenModal('delete', experiencia)"
-    class="btn btn-primary tooltips"
-    data-placement="top"
-    data-toggle="modal"
-    data-target="#deleteExperienceModal"
-    data-original-title="Delete"
-    ><i class="fa fa-times"></i>
-    </a>
-</div>
-
-
-<div>
-    <!-- Botón Añadir -->
-    <div class="text-center">
-        <button type="button" class="btn btn-success" data-target="#addExperienceModal" data-toggle="modal">
-            <a class="nav-link" style="color: white">
-                Añadir experiencia <span class="sr-only"> (current) </span>
-            </a>
-        </button>
+    <div>
+        <!-- Botón Añadir -->
+        <div class="text-center">
+            <button type="button" class="btn btn-success" data-target="#addExperienceModal" data-toggle="modal">
+                <a class="nav-link" style="color: white">
+                    Añadir experiencia <span class="sr-only"> (current) </span>
+                </a>
+            </button>
+        </div>
     </div>
+
 </div>
 
 
@@ -55,7 +55,7 @@
             <div class="modal-header">
                 <h5 class="modal-title" id="addExperienceModalLabel">Añadir Experiencia</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="close">
-                    <span aria-hidden="true">&times</span>
+                    <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
@@ -75,7 +75,7 @@
                     <div class="form-group">
                         <label for="descripcionExp">Descripcion</label>
                         <input type="text" ngModel name="descripcionExp" class="form-control" id="descripcionExp"
-                            placeholder="descripcion" required>
+                            placeholder="Descripcion" required>
                     </div>
 
                     <div class="form-group">
@@ -122,11 +122,14 @@
                     
                     <input type="hidden" ngModel="{{ editExperience?.idExp }}" name="idExp" class="form-control"
                         id="idExp" placeholder="" />
+
                     <div class="form-group">
+
                         <label for="descripcionExp">Descripcion</label>
-                        <input type="text" ngModel="{{editExperience?.descripcionExp }}" name="descripcionExp"
+                        <input type="text" ngModel="{{editExperience?.descripcionExp}}" name="descripcionExp"
                             class="form-control" id="descripcionExp" placeholder="descripcion" />
                     </div>
+
                     <div class="form-group">
                         
                         <label for="phone">Start date</label>

@@ -51,6 +51,21 @@ export class AcercaDeComponent implements OnInit {
     button.click();
 
     }
+
+    public onAddUsuario(addForm: NgForm){
+      document.getElementById('add-usuario-form')?.click();
+      this.usuarioService.addUsuario(addForm.value).subscribe({
+        next: (response:Usuario) =>{
+          console.log(response);
+          this.getUser();
+          addForm.reset();
+        },
+        error:(error:HttpErrorResponse)=>{
+          alert(error.message);
+          addForm.reset();
+        }
+      })
+    }
   
     public onUpdateUsuario(usuario : Usuario){
       this.editUsuario=usuario;

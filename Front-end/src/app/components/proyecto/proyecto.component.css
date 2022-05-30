@@ -20,7 +20,16 @@ div{
     text-align: justify;
 }
 
+.parte3{
+    display: inline-block;
+    text-align: center;
+}
+
 .img-proyecto{
     box-shadow:  10px 10px 5px #000000;
     box-shadow: ejeX ejeY difumasion color;
+}
+
+a{
+    margin: 2px;
 }

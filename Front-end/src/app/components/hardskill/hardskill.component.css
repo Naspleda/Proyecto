@@ -1,9 +1,15 @@
 .row{
-    background-color: #161616;
-    padding: 20px;
+        padding: 20px;
+        background-color: #161616;
+        margin-bottom: 20px;
+        box-shadow: 0px 0px 10px #000000;    
+
 }
 
 div{
     background: #161616;
 }
 
+a{
+    margin: 2px;
+}

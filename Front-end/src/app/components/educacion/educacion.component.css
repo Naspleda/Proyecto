@@ -1,11 +1,27 @@
 .row{
     padding: 20px;
+    background-color: #161616;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 10px #000000;
+}
+
+.container{
+    width: auto;
+}
+
+.col{
+    text-align: center;
 }
 
 div{
     background: #161616;
 }
 
-h1, h3{
-    display: inline;
+.parte1, .parte2, .parte3{
+    display:inline-block;
+    text-align: center;
+}
+
+a{
+    margin: 2px;
 }

@@ -1,51 +1,50 @@
 <div class="row g-0"><h1>Educacion</h1>
-<div *ngFor="let educacion of educaciones">
-    <div class="container">
-    <div class="col-lg-1"></div>
-    <div class="col-lg-11">
-        
-        <ul>
-            <li>
+    <div *ngFor="let educacion of educaciones">
+        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 parte1">
+           <h4>{{educacion.tituloEdu}} - ({{educacion.fechaEdu}})</h4> 
+            <br> 
+                <img src="{{educacion.imagenEdu}}" style="width: 100px; margin-bottom: 20px;">
+        </div>
 
-                <h1>{{educacion.tituloEdu}}</h1> -
-                <h3>({{educacion.fechaEdu}})</h3>
-            </li>
-            <img src="{{educacion.imagenEdu}}" style="width: 150px; margin: 50px">
-            <h5>{{educacion.descripcionEdu}}</h5>
-        </ul>
-    </div>
+        <div class="col-xs-12 col-sm-7 col-md-7 col-lg-7 parte3">
+                <p>{{educacion.descripcionEdu}}</p>
+        </div>
 
-    <a 
-    (click)="onOpenModal('edit', educacion)"
-    class="btn btn-primary tooltips"
-    data-placement="top"
-    data-toggle="modal"
-    data-target="#editEducacionModal"
-    data-original-title="Edit"
-    ><i class="fa fa-pencil"></i>
-</a>
-    <a
-    (click)="onOpenModal('delete', educacion)"
-    class="btn btn-primary tooltips"
-    data-placement="top"
-    data-toggle="modal"
-    data-target="#deleteEducacionModal"
-    data-original-title="Delete"
-    ><i class="fa fa-times"></i>
-    </a>
-</div>
-
-
-<div>
-    <!-- Botón Añadir -->
-    <div class="text-center">
-        <button type="button" class="btn btn-success" data-target="#addEducacionModal" data-toggle="modal">
-            <a class="nav-link" style="color: white">
-                Añadir educación <span class="sr-only"> (current) </span>
+        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 parte3">
+            <a 
+                (click)="onOpenModal('edit', educacion)"
+                class="btn btn-primary tooltips"
+                data-placement="top"
+                data-toggle="modal"
+                data-target="#editEducacionModal"
+                data-original-title="Edit"
+                ><i class="fa fa-pencil"></i>
             </a>
-        </button>
+                <a
+                (click)="onOpenModal('delete', educacion)"
+                class="btn btn-primary tooltips"
+                data-placement="top"
+                data-toggle="modal"
+                data-target="#deleteEducacionModal"
+                data-original-title="Delete"
+                ><i class="fa fa-times"></i>
+          </a>
+        </div>
     </div>
+
+    <div>
+        <!-- Botón Añadir -->
+        <div class="text-center">
+            <button type="button" class="btn btn-success" data-target="#addEducacionModal" data-toggle="modal">
+                <a class="nav-link" style="color: white">
+                    Añadir educación <span class="sr-only"> (current) </span>
+                </a>
+            </button>
+        </div>
+    </div>
+
 </div>
+
 
 
 <!--Creando Modal-->
