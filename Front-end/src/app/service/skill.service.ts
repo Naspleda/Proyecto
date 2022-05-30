@@ -9,7 +9,7 @@ import { Skill } from '../model/skill';
 })
 export class SkillService {
   [x: string]: any;
-  private apiServerUrl=environment.apiBaseUrl;
+  private apiServerUrl="https://apcen.herokuapp.com";
 
   constructor(private http:HttpClient) { }
 
