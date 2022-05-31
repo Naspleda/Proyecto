@@ -16,23 +16,41 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-
-
+/**
+ * The type Auth api.
+ */
 @RestController
-
 public class AuthApi {
 
+    /**
+     * The Auth manager.
+     */
     @Autowired
     AuthenticationManager authManager;
 
+    /**
+     * The Repo.
+     */
     @Autowired
     UserRepo repo;
 
+    /**
+     * The Password encoder.
+     */
     PasswordEncoder passwordEncoder;
 
+    /**
+     * The Jwt token util.
+     */
     @Autowired
     JwtTokenUtil jwtTokenUtil;
 
+    /**
+     * Metodo para logear el usuario
+     *
+     * @param request the request
+     * @return the response entity
+     */
     @PostMapping("/api/login")
     public ResponseEntity<?> login(@RequestBody @Valid AuthRequest request) {
         try {
@@ -51,20 +69,5 @@ public class AuthApi {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
     }
-    /*
-    @PostMapping("/api/register")
-    public ResponseEntity<String> register(@RequestBody User user) {
-        try {
-            String encodedPassword = this.passwordEncoder.encode(user.getPassword());
-            User userEncoded = new User(user.getEmail(),encodedPassword);
-            repo.save(userEncoded);
-            return new ResponseEntity("Usuario creado correctamente", HttpStatus.OK);
-        } catch (BadCredentialsException ex) {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
-        }
-
-    }
-    */
-
 
 }

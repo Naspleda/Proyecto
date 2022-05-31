@@ -9,21 +9,21 @@ import { UsuarioService } from 'src/app/service/usuario.service';
   styleUrls: ['./banner.component.css']
 })
 export class BannerComponent implements OnInit {
-  public usuario : Usuario | undefined;
+  public usuario: Usuario | undefined;
   public editUsuario: Usuario | undefined;
 
-  constructor(private usuarioService : UsuarioService) { }
+  constructor(private usuarioService: UsuarioService) { }
 
   ngOnInit(): void {
     this.getUser();
   }
 
-  public getUser():void{
+  public getUser(): void {
     this.usuarioService.getUser().subscribe({
-      next: (response: Usuario) =>{
-        this.usuario=response;
+      next: (response: Usuario) => {
+        this.usuario = response;
       },
-      error:(error:HttpErrorResponse)=>{
+      error: (error: HttpErrorResponse) => {
         alert(error.message);
       }
     })

@@ -1,37 +1,41 @@
-.container{
+.container {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.redes{
-    margin-right: 20px;
+
+.redes {
+    margin-right: 10px;
 }
 
 
-#logo{
+#logo {
     width: 150px;
     margin-left: 25px;
 }
 
-img{
+img {
     width: 50px;
     margin-left: 10px;
 }
-.btn{
+
+.btn {
     border-width: medium;
     margin-left: 25px;
-} 
+}
 
-@media (max-width: 575px){
-    .container{
+@media (max-width: 575px) {
+    .container {
         flex-direction: column;
     }
-    .redes{
+
+    .redes {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-    .redes img{
+
+    .redes img {
         margin: 1px;
     }
 }

@@ -10,7 +10,7 @@ import { Usuario } from 'src/app/model/usuario';
 export class HeaderComponent implements OnInit {
 
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
 
 

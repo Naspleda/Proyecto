@@ -8,9 +8,9 @@ describe('HardskillComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HardskillComponent ]
+      declarations: [HardskillComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

@@ -1,34 +1,25 @@
-<div class="row g-0"><h1>Educacion</h1>
+<div class="row g-0">
+    <h1>Educacion</h1>
     <div *ngFor="let educacion of educaciones">
         <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 parte1">
-           <h4>{{educacion.tituloEdu}} - ({{educacion.fechaEdu}})</h4> 
-            <br> 
-                <img src="{{educacion.imagenEdu}}" style="width: 100px; margin-bottom: 20px;">
+            <h4>{{educacion.tituloEdu}} - ({{educacion.fechaEdu}})</h4>
+            <br>
+            <img src="{{educacion.imagenEdu}}" style="width: 100px; margin-bottom: 20px;">
         </div>
 
         <div class="col-xs-12 col-sm-7 col-md-7 col-lg-7 parte3">
-                <p>{{educacion.descripcionEdu}}</p>
+            <p>{{educacion.descripcionEdu}}</p>
         </div>
 
         <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 parte3">
-            <a 
-                (click)="onOpenModal('edit', educacion)"
-                class="btn btn-primary tooltips"
-                data-placement="top"
-                data-toggle="modal"
-                data-target="#editEducacionModal"
-                data-original-title="Edit"
-                ><i class="fa fa-pencil"></i>
+            <a (click)="onOpenModal('edit', educacion)" class="btn btn-primary tooltips" data-placement="top"
+                data-toggle="modal" data-target="#editEducacionModal" data-original-title="Edit"><i
+                    class="fa fa-pencil"></i>
             </a>
-                <a
-                (click)="onOpenModal('delete', educacion)"
-                class="btn btn-primary tooltips"
-                data-placement="top"
-                data-toggle="modal"
-                data-target="#deleteEducacionModal"
-                data-original-title="Delete"
-                ><i class="fa fa-times"></i>
-          </a>
+            <a (click)="onOpenModal('delete', educacion)" class="btn btn-primary tooltips" data-placement="top"
+                data-toggle="modal" data-target="#deleteEducacionModal" data-original-title="Delete"><i
+                    class="fa fa-times"></i>
+            </a>
         </div>
     </div>
 
@@ -119,7 +110,7 @@
                     <label for="name">Title</label>
                     <input type="text" ngModel="{{ editEducation?.tituloEdu }}" name="tituloEdu" class="form-control"
                         id="tituloEdu" aria-describedby="emailHelp" placeholder="Title">
-                    
+
                     <input type="hidden" ngModel="{{ editEducation?.idEdu }}" name="idEdu" class="form-control"
                         id="idEdu" placeholder="" />
                     <div class="form-group">
@@ -128,7 +119,7 @@
                             class="form-control" id="descripcionEdu" placeholder="descripcion" />
                     </div>
                     <div class="form-group">
-                        
+
                         <label for="phone">Start date</label>
                         <input type="text" ngModel="{{ editEducation?.fechaEdu }}" name="fechaEdu" class="form-control"
                             id="fechaEdu" placeholder="Job title" />
@@ -155,44 +146,25 @@
 </div>
 
 <!-- Delete Modal -->
-<div
-    data-ds-toggle="modal" data-bs-target="#deleteModelLabel"
-    class="modal fade"
-    id="deleteEducacionModal"
-    tabindex="-1"
-    role="dialog"
-    aria-labelledby="deleteModelLabel"
-    aria-hidden="true"
->
+<div data-ds-toggle="modal" data-bs-target="#deleteModelLabel" class="modal fade" id="deleteEducacionModal"
+    tabindex="-1" role="dialog" aria-labelledby="deleteModelLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="deleteModelLabel">Delete Education</h5>
-                <button
-                type="button"
-                class="close"
-                data-dismiss="modal"
-                aria-label="Close"
-                >
-            <span aria-hidden="true">&times;</span>
-            </button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
             <div class="modal-body">
                 <p>Are you sure you want to delete education? {{deleteEducation?.tituloEdu}}</p>
                 <div class="modal-footer">
-                    <button
-                    type="button"
-                    class="btn btn-secondary"
-                    data-dismiss="modal"
-                    >
-                    No
-                </button>
-                <button
-                    (click)="onDeleteEducacion(deleteEducation!.idEdu)"
-                    class="btn btn-danger"
-                    data-dismiss="modal"
-                > Yes
-                </button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                        No
+                    </button>
+                    <button (click)="onDeleteEducacion(deleteEducation!.idEdu)" class="btn btn-danger"
+                        data-dismiss="modal"> Yes
+                    </button>
                 </div>
             </div>
         </div>
@@ -201,9 +173,9 @@
 </div>
 
 <!-- Noticacion -->
-    <div *ngIf="educaciones?.length == 0" class="col-lg-12 col-md-12 col-xl-12">
-        <div class="alert alert-info" role="alert">
-            <h4 class="alert-heading">No hay educaciones!</h4>
-            <p>No se encontraron educaciones</p>
-        </div>
+<div *ngIf="educaciones?.length == 0" class="col-lg-12 col-md-12 col-xl-12">
+    <div class="alert alert-info" role="alert">
+        <h4 class="alert-heading">No hay educaciones!</h4>
+        <p>No se encontraron educaciones</p>
     </div>
+</div>

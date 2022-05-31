@@ -9,20 +9,20 @@ import { Proyecto } from '../model/project';
 })
 export class ProyectoService {
   [x: string]: any;
-  private apiServerUrl="https://apcen.herokuapp.com";
+  private apiServerUrl = "https://apcen.herokuapp.com";
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  public getProject():Observable<Proyecto[]>{
+  public getProject(): Observable<Proyecto[]> {
     return this.http.get<Proyecto[]>(`${this.apiServerUrl}/api/proyecto/all`);
   }
-  public addProject(proyecto: Proyecto):Observable<Proyecto>{
-    return this.http.post<Proyecto>(`${this.apiServerUrl}/api/proyecto/add`,proyecto);
+  public addProject(proyecto: Proyecto): Observable<Proyecto> {
+    return this.http.post<Proyecto>(`${this.apiServerUrl}/api/proyecto/add`, proyecto);
   }
-  public updateProject(proyecto: Proyecto):Observable<Proyecto>{
-    return this.http.put<Proyecto>(`${this.apiServerUrl}/api/proyecto/update`,proyecto);
+  public updateProject(proyecto: Proyecto): Observable<Proyecto> {
+    return this.http.put<Proyecto>(`${this.apiServerUrl}/api/proyecto/update`, proyecto);
   }
-  public deleteProject(proyectoId: number):Observable<void>{
+  public deleteProject(proyectoId: number): Observable<void> {
     return this.http.delete<void>(`${this.apiServerUrl}/api/proyecto/delete/${proyectoId}`);
   }
 }

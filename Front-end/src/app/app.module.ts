@@ -36,7 +36,7 @@ import { FormsModule } from '@angular/forms';
     NgCircleProgressModule.forRoot({}),
     HttpClientModule,
     FormsModule
-    
+
   ],
   providers: [],
   bootstrap: [AppComponent]

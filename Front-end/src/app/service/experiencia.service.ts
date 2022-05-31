@@ -9,23 +9,23 @@ import { Experiencia } from "../model/experience";
 })
 export class ExperienciaService {
   [x: string]: any;
-  private apiServerUrl="https://apcen.herokuapp.com";
+  private apiServerUrl = "https://apcen.herokuapp.com";
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  public getExperience():Observable<Experiencia[]>{
+  public getExperience(): Observable<Experiencia[]> {
     return this.http.get<Experiencia[]>(`${this.apiServerUrl}/api/experiencia/all`);
   }
-  public addExperience(experiencia: Experiencia):Observable<Experiencia>{
-    return this.http.post<Experiencia>(`${this.apiServerUrl}/api/experiencia/add`,experiencia);
+  public addExperience(experiencia: Experiencia): Observable<Experiencia> {
+    return this.http.post<Experiencia>(`${this.apiServerUrl}/api/experiencia/add`, experiencia);
   }
-  public updateExperience(experiencia: Experiencia):Observable<Experiencia>{
-    return this.http.put<Experiencia>(`${this.apiServerUrl}/api/experiencia/update`,experiencia);
+  public updateExperience(experiencia: Experiencia): Observable<Experiencia> {
+    return this.http.put<Experiencia>(`${this.apiServerUrl}/api/experiencia/update`, experiencia);
   }
-  public deleteExperience(experienciaId: number):Observable<void>{
+  public deleteExperience(experienciaId: number): Observable<void> {
     return this.http.delete<void>(`${this.apiServerUrl}/api/experiencia/delete/${experienciaId}`);
   }
 
 
-  
+
 }
